@@ -1,0 +1,67 @@
+
+      <!DOCTYPE html>
+      <html lang="ru">
+      <head>
+        <meta charset="UTF-8">
+        <title>Анализ страницы</title>
+        <script src="https://cdn.jsdelivr.net/npm/chart.js"></script>
+        <style>
+          body { font-family: sans-serif; padding: 20px; line-height: 1.6; }
+          canvas { max-width: 700px; margin-top: 30px; }
+          .info { margin-top: 20px; }
+        </style>
+      </head>
+      <body>
+        <h1>Анализ страницы: https://easycomm.ru/cat</h1>
+
+        <h2>Описание</h2>
+        <p>Ежедневно собираем внутреннюю аналитику на маркетплейсах, которая поможет выстроить успешную стратегию, увеличить видимость бренда и продвинуть карточки в топ.</p>
+
+        <h2>Контактная информация</h2>
+        <p><strong>Email:</strong> ecombrief@easycomm.ru, ecombrief@easycomm.ru, ecombrief@easycomm.ru, ecombrief@easycomm.ru, ecombrief@easycomm.ru, ecombrief@easycomm.ru, ecombrief@easycomm.ru, ecombrief@easycomm.ru</p>
+        <p><strong>Телефоны (+7):</strong> Не найдено</p>
+        <p><strong>Контактные ссылки:</strong> <a href="#footer-contacts">#footer-contacts</a></p>
+
+        <h2>График заголовков</h2>
+        <canvas id="headingChart"></canvas>
+
+        <h2>Дополнительная информация</h2>
+        <canvas id="infoChart"></canvas>
+
+        <script>
+          // Заголовки
+          new Chart(document.getElementById('headingChart').getContext('2d'), {
+            type: 'bar',
+            data: {
+              labels: ['H1', 'H2', 'H3'],
+              datasets: [{
+                label: 'Количество заголовков',
+                data: [1, 3, 7],
+                backgroundColor: ['#4e79a7', '#f28e2b', '#e15759']
+              }]
+            },
+            options: {
+              responsive: true,
+              scales: { y: { beginAtZero: true, precision: 0 } }
+            }
+          });
+
+          // Общая информация
+          new Chart(document.getElementById('infoChart').getContext('2d'), {
+            type: 'pie',
+            data: {
+              labels: ['Emails', 'Телефоны', 'Контактные ссылки', 'Изображения'],
+              datasets: [{
+                label: 'Информация',
+                data: [8, 0, 1, 58],
+                backgroundColor: ['#76b041', '#ffb000', '#d11141', '#00aedb']
+              }]
+            },
+            options: {
+              responsive: true
+            }
+          });
+        </script>
+      </body>
+      </html>
+    

@@ -1,0 +1,40 @@
+
+      <!DOCTYPE html>
+      <html lang="en">
+      <head>
+        <meta charset="UTF-8">
+        <title>Heading Chart</title>
+        <script src="https://cdn.jsdelivr.net/npm/chart.js"></script>
+        <style>
+          body { font-family: sans-serif; padding: 20px; }
+          canvas { max-width: 600px; }
+        </style>
+      </head>
+      <body>
+        <h2>График количества заголовков на странице https://easycomm.ru/cat</h2>
+        <canvas id="headingChart"></canvas>
+        <script>
+          const ctx = document.getElementById('headingChart').getContext('2d');
+          new Chart(ctx, {
+            type: 'bar',
+            data: {
+              labels: ['H1', 'H2', 'H3'],
+              datasets: [{
+                label: 'Количество заголовков',
+                data: [1, 3, 7],
+                backgroundColor: ['#4e79a7', '#f28e2b', '#e15759']
+              }]
+            },
+            options: {
+              scales: {
+                y: {
+                  beginAtZero: true,
+                  precision: 0
+                }
+              }
+            }
+          });
+        </script>
+      </body>
+      </html>
+    
